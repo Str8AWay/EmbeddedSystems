@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ControlActivity" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Stop"
+        android:textColorHint="@android:color/holo_red_dark"
+        android:textColorLink="@android:color/white"
+        android:textSize="120sp" 
+        android:onClick="stopRobot"/>
+
+    <Button
+        android:id="@+id/forwardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Forward" 
+        android:onClick="forwardRobot"/>
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="120dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:text="Left" 
+        android:onClick="leftRobot"/>
+
+    <Button
+        android:id="@+id/backwardsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/forwardButton"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="49dp"
+        android:text="Backwards" 
+        android:onClick="backwardsRobot"/>/>
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/leftButton"
+        android:layout_marginLeft="101dp"
+        android:layout_toRightOf="@+id/button1"
+        android:text="Right" 
+        android:onClick="rightRobot"/>/>
+
+</RelativeLayout>
