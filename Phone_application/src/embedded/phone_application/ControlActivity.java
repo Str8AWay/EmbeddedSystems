@@ -9,10 +9,8 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 public class ControlActivity extends Activity {
 
@@ -60,7 +58,6 @@ public class ControlActivity extends Activity {
 				String text = new String(message, 0, inPacket.getLength());
 				inSocket.close();
 				if (text.length() > 0){
-					Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
 					showMessage(text);
 				}
 				Arrays.fill(message, (Byte) null);
@@ -106,6 +103,7 @@ public class ControlActivity extends Activity {
 	public void backwardsRobot(View view){
 		sendMessage("FORWARDS");
 	}
+	
 	public void sendMessage(String messageStr){
 		byte[] message = messageStr.getBytes();
 		int msg_length=messageStr.length();
