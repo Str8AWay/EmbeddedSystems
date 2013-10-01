@@ -32,7 +32,7 @@
         android:inputType="number"/>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ipTextBox"
@@ -45,7 +45,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/textView"
         android:layout_centerVertical="true"
         android:text="Port"
         android:textAppearance="?android:attr/textAppearanceMedium" />

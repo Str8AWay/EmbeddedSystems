@@ -9,15 +9,22 @@
     tools:context=".ControlActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/stopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Stop"
-        android:textColorHint="@android:color/holo_red_dark"
-        android:textColorLink="@android:color/white"
-        android:textSize="120sp" 
-        android:onClick="stopRobot"/>
+        android:layout_marginBottom="28dp"
+        android:text="Stop Listening" 
+        android:onClick="stopListening"/>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stopButton"
+        android:layout_alignLeft="@+id/stopButton"
+        android:text="Start Listening" 
+        android:onClick="startListening"/>
 
 </RelativeLayout>
