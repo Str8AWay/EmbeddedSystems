@@ -1,0 +1,55 @@
+Locating and Navigating
+
+Assume clocks are synced
+Compare time
+speed of medium
+
+<-------ME---------sender1-----sender2---->
+        20s          10s         5s
+      -4900m         100m        2600m
+(delta t)*speed
+sender1: 10s * 500m/s = 5000m
+sender2: 15s * 500m/s = 7500m
+
+
+            ^
+            |
+     0s     |
+  (-20,20)  |
+            |     0s
+            |   (30,10)
+<------------------------>
+            |
+            |
+            |
+            |
+            |
+           \/
+
+delta t = 10s
+sender1: 10*500m/s = 5000m away
+sender2: 10*500m/s = 5000m away
+
+solutions: (-343.527, -2717.64), (1343.53, 5717.64)
+
+Need 4 satellites for 3d world
+Can get away with 3 satellites? 
+    Assume on the surface of the earth (perfect sphere)
+    No elevation
+
+History of GPS
+    Started in 1973
+    Four Satellites in 1978
+    Fully operational in 1995
+    $12 Billion as of 2002
+
+Components
+    Space segment (satellites)
+    User segment (GPS receivers)
+    Ground segment (ground control)
+
+Selective Availability (deactivated in 2000)
+    adjust the time
+    turn the satellite off
+    everyone started using it
+    
