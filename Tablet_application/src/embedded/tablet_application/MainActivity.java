@@ -21,9 +21,7 @@ public class MainActivity extends Activity {
 	    Intent intent = new Intent(this, ControlActivity.class);
 	    EditText editText = (EditText) findViewById(R.id.ipTextBox);
 	    String ip = editText.getText().toString();
-	    editText = (EditText) findViewById(R.id.portTextBox);
-	    String port = editText.getText().toString();
-	    String[] connectionInfo = {ip, port};
+	    String[] connectionInfo = {ip};
 	    intent.putExtra("connection", connectionInfo);
 	    startActivity(intent);
 	}

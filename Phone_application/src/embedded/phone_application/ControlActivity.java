@@ -1,22 +1,14 @@
 package embedded.phone_application;
 
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.view.Menu;
 import android.view.View;
 
 public class ControlActivity extends Activity {
 
 	String ip;
-	String port;
-	InetAddress local;
-	DatagramSocket outSocket;
 	byte[] message = new byte[1500];
 	Listener listener;
 	
@@ -30,11 +22,9 @@ public class ControlActivity extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
 		String[] connectionInfo = extras.getStringArray("connection");
-		//ip = connectionInfo[0];
-		port = connectionInfo[1];
+		ip = connectionInfo[0];
 		
-		System.out.println(port);
-		listener = new Listener(this, Integer.parseInt(port));
+		listener = new Listener(this, ip);
 		listener.setupUdp();
 	}
 	
@@ -42,26 +32,12 @@ public class ControlActivity extends Activity {
 		listener.execute();
 	}
 	
-	public void showMessage(String message) {
-		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("Message");
-		alertDialog.setMessage(message);
-		alertDialog.show();
-	}
-	
 	public void stopListening(View view){
-		listener.cancel(true);
-	}
-	
-	public void sendMessage(String messageStr){
-		byte[] message = messageStr.getBytes();
-		int msg_length=messageStr.length();
-		DatagramPacket packet = new DatagramPacket(message, msg_length,local,Integer.parseInt(port));
-		try{
-			outSocket.send(packet);
+		try {
+			listener.cancel(true);
 		}
-		catch(Exception e){
-			System.out.println(e.toString());
+		catch (Exception e) {
+			System.out.println("stopped failed");
 		}
 	}
 

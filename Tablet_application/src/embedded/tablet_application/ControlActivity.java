@@ -13,11 +13,9 @@ import android.view.View;
 public class ControlActivity extends Activity {
 
 	String ip;
-	String port;
+	final int port = 8000;
 	InetAddress local;
 	DatagramSocket outSocket;
-	DatagramSocket inSocket;
-	DatagramPacket inPacket;
 	byte[] message = new byte[1500];
 	
 	@Override
@@ -31,10 +29,8 @@ public class ControlActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		String[] connectionInfo = extras.getStringArray("connection");
 		ip = connectionInfo[0];
-		port = connectionInfo[1];
 		
 		System.out.println(ip);
-		System.out.println(port);
 		
 		setupUDP();
 	}
@@ -43,8 +39,6 @@ public class ControlActivity extends Activity {
 		try{
 			outSocket = new DatagramSocket();
 			local = InetAddress.getByName(ip);
-			inPacket = new DatagramPacket(message, message.length);
-			inSocket = new DatagramSocket(Integer.parseInt(port));
 		}
 		catch(Exception e){
 			System.out.println(e.toString());
@@ -60,16 +54,22 @@ public class ControlActivity extends Activity {
 	public void rightRobot(View view){
 		sendMessage("RIGHT");
 	}
-	public void forwardRobot(View view){
+	public void forwardsRobot(View view){
 		sendMessage("FORWARDS");
 	}
 	public void backwardsRobot(View view){
 		sendMessage("BACKWARDS");
 	}
+	public void homeRobot(View view){
+		//go home
+	}
+	public void waypointRobot(View view){
+		//pull up google API for waypoints
+	}
 	public void sendMessage(String messageStr){
 		byte[] message = messageStr.getBytes();
 		int msg_length=messageStr.length();
-		DatagramPacket packet = new DatagramPacket(message, msg_length,local,Integer.parseInt(port));
+		DatagramPacket packet = new DatagramPacket(message, msg_length,local,port);
 		try{
 			outSocket.send(packet);
 		}
