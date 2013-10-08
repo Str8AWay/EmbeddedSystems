@@ -6,7 +6,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" >
     </uses-permission>
-    
+
     <uses-sdk
         android:minSdkVersion="18"
         android:targetSdkVersion="18" />
@@ -15,11 +15,13 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="com.google.android.maps" />
+
         <activity
             android:name="embedded.tablet_application.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +30,14 @@
         </activity>
         <activity
             android:name="embedded.tablet_application.ControlActivity"
-            android:label="@string/title_activity_control" 
-            android:screenOrientation="landscape">
+            android:label="@string/title_activity_control"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="embedded.tablet_application.MapActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_map"
+            android:theme="@style/FullscreenTheme" >
         </activity>
     </application>
 

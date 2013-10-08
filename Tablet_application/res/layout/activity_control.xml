@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,55 +9,68 @@
     tools:context=".ControlActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Stop"
-        android:textColorHint="@android:color/holo_red_dark"
-        android:textColorLink="@android:color/white"
-        android:textSize="120sp" 
-        android:onClick="stopRobot"/>
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="35dp"
+        android:layout_x="106dp"
+        android:layout_y="383dp"
+        android:onClick="homeRobot"
+        android:text="Home" />
 
     <Button
-        android:id="@+id/forwardButton"
+        android:id="@+id/waypointButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:text="Forward" 
-        android:onClick="forwardRobot"/>
+        android:layout_x="750dp"
+        android:layout_y="396dp"
+        android:onClick="waypointRobot"
+        android:text="Waypoint" />
 
     <Button
-        android:id="@+id/leftButton"
+        android:id="@+id/forwardsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="120dp"
-        android:layout_toLeftOf="@+id/button1"
-        android:text="Left" 
-        android:onClick="leftRobot"/>
+        android:layout_x="416dp"
+        android:layout_y="54dp"
+        android:onClick="forwardsRobot"
+        android:text="Forwards" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="435dp"
+        android:layout_y="199dp"
+        android:onClick="stopRobot"
+        android:text="Stop" />
 
     <Button
         android:id="@+id/backwardsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/forwardButton"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="49dp"
-        android:text="Backwards" 
-        android:onClick="backwardsRobot"/>/>
+        android:layout_x="449dp"
+        android:layout_y="349dp"
+        android:onClick="backwardsRobot"
+        android:text="Backwards" />
 
     <Button
         android:id="@+id/rightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/leftButton"
-        android:layout_marginLeft="101dp"
-        android:layout_toRightOf="@+id/button1"
-        android:text="Right" 
-        android:onClick="rightRobot"/>/>
+        android:layout_x="667dp"
+        android:layout_y="213dp"
+        android:onClick="rightRobot"
+        android:text="Right" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/leftButoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="265dp"
+        android:layout_y="208dp"
+        android:onClick="leftRobot"
+        android:text="Left" />
+/>
+</AbsoluteLayout>
