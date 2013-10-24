@@ -7,11 +7,11 @@ import android.view.Menu;
 import android.view.View;
 
 public class ControlActivity extends Activity {
-
+	
 	String ip;
 	byte[] message = new byte[1500];
 	Listener listener;
-	
+	Boolean listening = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,12 +29,16 @@ public class ControlActivity extends Activity {
 	}
 	
 	public void startListening(View view){
-		listener.execute();
+		if (!listening) {
+			listening = true;
+			listener.execute();
+		}
 	}
 	
 	public void stopListening(View view){
 		try {
 			listener.cancel(true);
+			listening = false;
 		}
 		catch (Exception e) {
 			System.out.println("stopped failed");
