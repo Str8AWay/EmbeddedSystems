@@ -1,22 +1,19 @@
 package embedded.tablet_application;
 
-import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
 public class ControlActivity extends Activity {
-
-	String ip;
-	final int port = 8000;
-	InetAddress local;
-	DatagramSocket outSocket;
-	byte[] message = new byte[1500];
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +25,15 @@ public class ControlActivity extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
 		String[] connectionInfo = extras.getStringArray("connection");
-		ip = connectionInfo[0];
-		
-		System.out.println(ip);
+		Message.ip = connectionInfo[0];
 		
 		setupUDP();
 	}
 	
 	public void setupUDP(){
 		try{
-			outSocket = new DatagramSocket();
-			local = InetAddress.getByName(ip);
+			Message.outSocket = new DatagramSocket();
+			Message.local = InetAddress.getByName(Message.ip);
 		}
 		catch(Exception e){
 			System.out.println(e.toString());
@@ -46,36 +41,30 @@ public class ControlActivity extends Activity {
 	}
 	
 	public void stopRobot(View view){
-		sendMessage("STOP");
+		Message.sendMessage("STOP");
 	}
 	public void leftRobot(View view){
-		sendMessage("LEFT");
+		Message.sendMessage("LEFT");
 	}
 	public void rightRobot(View view){
-		sendMessage("RIGHT");
+		Message.sendMessage("RIGHT");
 	}
 	public void forwardsRobot(View view){
-		sendMessage("FORWARDS");
+		Message.sendMessage("FORWARDS");
 	}
 	public void backwardsRobot(View view){
-		sendMessage("BACKWARDS");
+		Message.sendMessage("BACKWARDS");
 	}
 	public void homeRobot(View view){
-		//go home
+		LocationManager location = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		Location myLoc = location.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+		Location myLocNet = location.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		if (myLoc != null) Message.sendMessage(myLoc.toString());
+		else Message.sendMessage(myLocNet.toString());
 	}
 	public void waypointRobot(View view){
-		//pull up google API for waypoints
-	}
-	public void sendMessage(String messageStr){
-		byte[] message = messageStr.getBytes();
-		int msg_length=messageStr.length();
-		DatagramPacket packet = new DatagramPacket(message, msg_length,local,port);
-		try{
-			outSocket.send(packet);
-		}
-		catch(Exception e){
-			System.out.println(e.toString());
-		}
+		Intent intent = new Intent(this, MapActivity.class);
+		startActivity(intent);
 	}
 
 	@Override
