@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "motor.h"
+#include <sonar.h>
+#include <sonarcont.h>
 #include <qegpioint.h>
 
 #define BUFLEN 512
@@ -30,12 +32,24 @@ void cycleCount(unsigned int, timeval*, void*){
 	printf("leftWheelCounta = %u\n", leftWheelCount);
 }
 
+
+void hitWallBumper(unsigned int, timeval*, void*){
+
+}
+
 int main(void) {
 	CQEGpioInt &io = CQEGpioInt::GetRef(); // get i/o reference
 	struct sockaddr_in si_me, si_other;
 	int s = sizeof(si_other);
 	socklen_t slen = sizeof(si_other);
 	char buf[BUFLEN];
+
+	//CSonar **sonarArray;
+	CSonar sonar = CSonar::CSonar(13,12);
+	//sonarArray[0] = &sonar;
+	//CSonarController sonarController = CSonarController::CSonarController(1, sonarArray, 50);
+	//sonarController.SetFiring(1,sonarArray, 50);
+	//io.SetDataDirection(0x1000);
 
 	if(io.SetInterrupt(1, true) == -1){
 		printf("Set Optical Sensor failed");
@@ -71,8 +85,11 @@ int main(void) {
 	if (bind(s, (struct sockaddr *)&si_me, sizeof(si_me)) == -1)
 		diep("bind");
 
+	//int sonarVals;
 	while(1) {
-
+		//sonarController.GetVals(sonarVals);
+		sonar.Fire(false);
+		printf("sonarValue %d\n", sonar.GetVal());
 		recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *)&si_other, &slen);
 		if(strncmp(buf, "STOP", 4) == 0) {
 			stop();
