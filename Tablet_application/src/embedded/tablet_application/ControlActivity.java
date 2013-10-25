@@ -58,9 +58,9 @@ public class ControlActivity extends Activity {
 	public void homeRobot(View view){
 		LocationManager location = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		Location myLoc = location.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		Location myLocNet = location.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		if (myLoc != null) Message.sendMessage(myLoc.toString());
-		else Message.sendMessage(myLocNet.toString());
+		if (myLoc != null) myLoc = location.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		if (myLoc != null) Message.sendLocation(myLoc);
+		else Message.sendMessage("tablet location unknown");
 	}
 	public void waypointRobot(View view){
 		Intent intent = new Intent(this, MapActivity.class);

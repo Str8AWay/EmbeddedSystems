@@ -43,7 +43,7 @@ public class MapActivity extends FragmentActivity {
 				Location destination = new Location(ACCESSIBILITY_SERVICE);
 				destination.setLatitude(point.latitude);
 				destination.setLongitude(point.longitude);
-				Message.sendMessage(destination.toString());
+				Message.sendLocation(destination);
 			}
 		});
 		mMap.setOnMarkerClickListener(new OnMarkerClickListener() {

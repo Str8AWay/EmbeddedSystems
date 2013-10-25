@@ -5,6 +5,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 import android.app.Application;
+import android.location.Location;
 
 public class Message extends Application{
 
@@ -24,5 +25,12 @@ public class Message extends Application{
 		catch(Exception e){
 			System.out.println(e.toString());
 		}
+	}
+	
+	public static void sendLocation(Location myLoc){
+		double lat = myLoc.getLatitude();
+		double lon = myLoc.getLongitude();
+		String message = lat + "," + lon;
+		sendMessage(message);
 	}
 }

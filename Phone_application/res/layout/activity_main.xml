@@ -29,7 +29,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="48dp"
         android:text="IP"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/connectButton"
@@ -39,6 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:onClick="sendMessage"
-        android:text="Connect" />
+        android:text="Connect"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>
