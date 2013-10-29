@@ -22,18 +22,17 @@ void diep(char *s) {
 	exit(1);
 }
 
-void hitCliff(unsigned int, timeval*, void*){
+void hitCliff(unsigned int, timeval*, void*) {
 	stop();
 	printf("leftWheelCount = %u\n", leftWheelCount);
 }
 
-void cycleCount(unsigned int, timeval*, void*){
+void cycleCount(unsigned int, timeval*, void*) {
 	leftWheelCount++;
 	printf("leftWheelCounta = %u\n", leftWheelCount);
 }
 
-
-void hitWallBumper(unsigned int, timeval*, void*){
+void hitWallBumper(unsigned int, timeval*, void*) {
 
 }
 
@@ -45,33 +44,33 @@ int main(void) {
 	char buf[BUFLEN];
 
 	//CSonar **sonarArray;
-	CSonar sonar = CSonar::CSonar(13,12);
+	CSonar sonar = CSonar::CSonar(13, 12);
 	//sonarArray[0] = &sonar;
 	//CSonarController sonarController = CSonarController::CSonarController(1, sonarArray, 50);
 	//sonarController.SetFiring(1,sonarArray, 50);
 	//io.SetDataDirection(0x1000);
 
-	if(io.SetInterrupt(1, true) == -1){
+	if (io.SetInterrupt(1, true) == -1) {
 		printf("Set Optical Sensor failed");
 	}
 
-	if(io.SetInterruptMode(1, QEG_INTERRUPT_POSEDGE) == -1){
+	if (io.SetInterruptMode(1, QEG_INTERRUPT_POSEDGE) == -1) {
 		printf("set interrupt Optical Sensor mode failed");
 	}
 
-	if(io.SetInterrupt(14, true) == -1){
+	if (io.SetInterrupt(14, true) == -1) {
 		printf("set Limit Sensor interrupt failed");
 	}
 
-	if(io.RegisterCallback(1, 0, cycleCount) == -1){
-			printf("register Optical Sensor call back failed");
-		}
+	if (io.RegisterCallback(1, 0, cycleCount) == -1) {
+		printf("register Optical Sensor call back failed");
+	}
 
-	if(io.SetInterruptMode(14, QEG_INTERRUPT_POSEDGE) == -1){
+	if (io.SetInterruptMode(14, QEG_INTERRUPT_POSEDGE) == -1) {
 		printf("set interrupt Limit Sensor mode failed");
 	}
 
-	if(io.RegisterCallback(14, 0, hitCliff) == -1){
+	if (io.RegisterCallback(14, 0, hitCliff) == -1) {
 		printf("register Limit Sensor call back failed");
 	}
 
@@ -82,30 +81,28 @@ int main(void) {
 	si_me.sin_family = AF_INET;
 	si_me.sin_port = htons(PORT);
 	si_me.sin_addr.s_addr = htonl(INADDR_ANY);
-	if (bind(s, (struct sockaddr *)&si_me, sizeof(si_me)) == -1)
+	if (bind(s, (struct sockaddr *) &si_me, sizeof(si_me)) == -1)
 		diep("bind");
 
 	//int sonarVals;
-	while(1) {
+	while (1) {
 		//sonarController.GetVals(sonarVals);
 		sonar.Fire(false);
 		printf("sonarValue %d\n", sonar.GetVal());
-		recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *)&si_other, &slen);
-		if(strncmp(buf, "STOP", 4) == 0) {
+		recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *) &si_other, &slen);
+		if (strncmp(buf, "STOP", 4) == 0) {
 			stop();
-		}
-		else if(strncmp(buf, "FORWARDS", 8)== 0){
+		} else if (strncmp(buf, "FORWARDS", 8) == 0) {
 			driveForward(MAX_SPEED_SETTING);
+		} else if (strncmp(buf, "BACKWARDS", 9) == 0) {
+			driveBackward(MAX_SPEED_SETTING);
+		} else if (strncmp(buf, "LEFT", 4) == 0) {
+			turnLeft(MAX_SPEED_SETTING);
+		} else if (strncmp(buf, "RIGHT", 5) == 0) {
+			turnRight(MAX_SPEED_SETTING);
+		} else if (strncmp(buf, "BEARING", 7) == 0) {
+			driveToBearing(buf[8]); // need to figure out how the bearing packet is structured
 		}
-		else if(strncmp(buf, "BACKWARDS", 9)== 0){
-					driveBackward(MAX_SPEED_SETTING);
-				}
-		else if(strncmp(buf, "LEFT", 4)== 0){
-					turnLeft(MAX_SPEED_SETTING);
-				}
-		else if(strncmp(buf, "RIGHT", 5)== 0){
-					turnRight(MAX_SPEED_SETTING);
-				}
 
 		printf("Received packet from %s:%d\nData: %s\n\n", inet_ntoa(
 				si_other.sin_addr), ntohs(si_other.sin_port), buf);
