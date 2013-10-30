@@ -40,6 +40,7 @@ public class MapActivity extends FragmentActivity {
 				mMap.addMarker(new MarkerOptions()
 						.position(point)
 						.draggable(false));
+				
 				Location destination = new Location(ACCESSIBILITY_SERVICE);
 				destination.setLatitude(point.latitude);
 				destination.setLongitude(point.longitude);

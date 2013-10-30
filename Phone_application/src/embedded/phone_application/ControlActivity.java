@@ -1,5 +1,8 @@
 package embedded.phone_application;
 
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
@@ -12,6 +15,7 @@ public class ControlActivity extends Activity {
 	byte[] message = new byte[1500];
 	Listener listener;
 	Boolean listening = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,8 +28,21 @@ public class ControlActivity extends Activity {
 		String[] connectionInfo = extras.getStringArray("connection");
 		ip = connectionInfo[0];
 		
-		listener = new Listener(this, ip);
+		DriveLocation drive = new DriveLocation(this);
+		listener = new Listener(this, ip, drive);
+		setupUdp();	
+	}
+	
+	public void setupUdp(){
 		listener.setupUdp();
+		try{
+			Message.outSocket = new DatagramSocket();
+			Message.ip = ip;
+			Message.local = InetAddress.getByName(Message.ip);
+		}
+		catch(Exception e){
+			System.out.println(e.toString());
+		}
 	}
 	
 	public void startListening(View view){
