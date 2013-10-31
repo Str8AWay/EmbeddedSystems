@@ -12,6 +12,9 @@ import android.widget.Toast;
 public class Listener extends AsyncTask<Void, String, Void>{
 	
 	private DriveLocation drive;
+	Thread headingThread;
+	Thread driveThread;
+	Heading heading;
 	Context c;
 	String ip;
 	DatagramSocket inSocket;
@@ -44,6 +47,12 @@ public class Listener extends AsyncTask<Void, String, Void>{
 				String text = new String(message, 0, inPacket.getLength());
 				publishProgress(text);
 				System.out.println(text);
+				if (text.startsWith("STOP")) {
+					if (null != headingThread){
+						heading.running = false;
+						drive.running = false;
+					}
+				}
 				Message.sendMessage(text);
 				if (Character.isDigit(text.charAt(0))) driveToLocation(text);
 			}
@@ -55,10 +64,13 @@ public class Listener extends AsyncTask<Void, String, Void>{
 	}	
 	
 	private void driveToLocation(String text) {
-		Location destination = getLocationFromPacket(text);
-		System.out.println(destination);
-		drive.driveTo(destination);
-		drive.test();
+		heading = new Heading(c);
+		headingThread = new Thread(heading);
+		headingThread.start();
+		drive.dest = getLocationFromPacket(text);
+		drive.h = heading;
+		driveThread = new Thread(drive);
+		driveThread.start();
 	}
 
 	private Location getLocationFromPacket(String text) {
