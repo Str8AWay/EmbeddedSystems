@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DEAD91D0-01A3-4153-8C0E-460B5B3E4B8B</string>
+	<string>2C558C89-CFAC-406D-8A78-64087A710E36</string>
 	<key>IDESourceControlProjectName</key>
 	<string>GPSApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>E3DB5EE3-1427-4E72-B81E-13B87A50117B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>EmbeddedSystems</string>
+			<string>GPSApp</string>
 		</dict>
 	</array>
 </dict>

@@ -7,6 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
+
+#define GPS_FORMAT @"(%f, %f)"
 
 @interface ViewController ()
 
@@ -18,12 +22,36 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleHeadingChange:)
+                                                 name:@"headingChanged"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleLocationChange:)
+                                                 name:@"locationChanged"
+                                               object:nil];
+    
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.headingLabel.text = [NSString stringWithFormat:@"%f", delegate.heading.trueHeading];
+    self.gpsLabel.text = [NSString stringWithFormat:GPS_FORMAT, delegate.location.coordinate.latitude, delegate.location.coordinate.longitude];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)handleHeadingChange:(id)object
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.headingLabel.text = [NSString stringWithFormat:@"%f", delegate.heading.trueHeading];
+}
+
+- (void)handleLocationChange:(id)object
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.gpsLabel.text = [NSString stringWithFormat:GPS_FORMAT, delegate.location.coordinate.latitude, delegate.location.coordinate.longitude];
 }
 
 @end

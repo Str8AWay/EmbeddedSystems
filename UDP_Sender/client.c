@@ -8,9 +8,10 @@
 #include <string.h>
 
 #define BUFLEN 512
-#define PORT 8888
+#define PORT 8000
 
-#define SRV_IP "192.168.2.5"
+#define SRV_IP "192.168.2.11"
+
 
 void diep(char *s)
 {

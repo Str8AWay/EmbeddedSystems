@@ -21,6 +21,10 @@
 		2101E024182C098A003483F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2101E006182C0989003483F7 /* UIKit.framework */; };
 		2101E02C182C098A003483F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2101E02A182C098A003483F7 /* InfoPlist.strings */; };
 		2101E02E182C098A003483F7 /* GPSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E02D182C098A003483F7 /* GPSAppTests.m */; };
+		2101E03D182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */; };
+		2101E03E182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */; };
+		2101E042182C61B8003483F7 /* CLLocation+Bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E041182C61B8003483F7 /* CLLocation+Bearing.m */; };
+		2101E043182C61B8003483F7 /* CLLocation+Bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E041182C61B8003483F7 /* CLLocation+Bearing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		2101E029182C098A003483F7 /* GPSAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GPSAppTests-Info.plist"; sourceTree = "<group>"; };
 		2101E02B182C098A003483F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2101E02D182C098A003483F7 /* GPSAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSAppTests.m; sourceTree = "<group>"; };
+		2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		2101E03C182C1BFA003483F7 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		2101E040182C61B8003483F7 /* CLLocation+Bearing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Bearing.h"; sourceTree = "<group>"; };
+		2101E041182C61B8003483F7 /* CLLocation+Bearing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Bearing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,10 @@
 			children = (
 				2101E011182C0989003483F7 /* AppDelegate.h */,
 				2101E012182C0989003483F7 /* AppDelegate.m */,
+				2101E040182C61B8003483F7 /* CLLocation+Bearing.h */,
+				2101E041182C61B8003483F7 /* CLLocation+Bearing.m */,
+				2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */,
+				2101E03C182C1BFA003483F7 /* GCDAsyncUdpSocket.h */,
 				2101E014182C098A003483F7 /* Main.storyboard */,
 				2101E017182C098A003483F7 /* ViewController.h */,
 				2101E018182C098A003483F7 /* ViewController.m */,
@@ -249,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2101E03D182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
+				2101E042182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
 				2101E019182C098A003483F7 /* ViewController.m in Sources */,
 				2101E013182C0989003483F7 /* AppDelegate.m in Sources */,
 				2101E00F182C0989003483F7 /* main.m in Sources */,
@@ -259,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2101E03E182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
 				2101E02E182C098A003483F7 /* GPSAppTests.m in Sources */,
+				2101E043182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
