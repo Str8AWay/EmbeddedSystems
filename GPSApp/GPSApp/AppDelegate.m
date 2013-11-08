@@ -8,10 +8,9 @@
 
 #import "AppDelegate.h"
 #import "CLLocation+Bearing.h"
+#import "UIView+Toast.h"
 
 #define INCOMING_PORT 8000
-#define VEX_IP @"192.168.2.5"
-#define VEX_PORT 8888
 #define COORDINATE_REGEX @"^(-?\\d+\\.\\d+),(-?\\d+\\.\\d+)$"
 #define BEARING_FORMAT @"BEARING:%d"
 
@@ -110,6 +109,8 @@
     [self.socket sendData:data toHost:VEX_IP port:VEX_PORT withTimeout:-1 tag:1];
     NSString *message = [[NSString alloc] initWithData:data
                                               encoding:NSUTF8StringEncoding];
+    [self.window.rootViewController.view makeToast:message duration:0.5 position:@"bottom"];
+    
     if ([message hasPrefix:@"43"]) {
         NSError *error;
         NSTextCheckingResult *match = [[NSRegularExpression regularExpressionWithPattern:COORDINATE_REGEX options:NSRegularExpressionAnchorsMatchLines error:&error] firstMatchInString:message options:NSMatchingReportCompletion range:NSMakeRange(0, message.length)];

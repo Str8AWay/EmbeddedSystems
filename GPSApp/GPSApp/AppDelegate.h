@@ -10,6 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GCDAsyncUdpSocket.h"
 
+#define VEX_IP @"192.168.2.5"
+#define VEX_PORT 8888
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate, GCDAsyncUdpSocketDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

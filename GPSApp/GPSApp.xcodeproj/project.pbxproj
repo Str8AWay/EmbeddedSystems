@@ -14,7 +14,7 @@
 		2101E00F182C0989003483F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E00E182C0989003483F7 /* main.m */; };
 		2101E013182C0989003483F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E012182C0989003483F7 /* AppDelegate.m */; };
 		2101E016182C098A003483F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2101E014182C098A003483F7 /* Main.storyboard */; };
-		2101E019182C098A003483F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E018182C098A003483F7 /* ViewController.m */; };
+		2101E019182C098A003483F7 /* GPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E018182C098A003483F7 /* GPSViewController.m */; };
 		2101E01B182C098A003483F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2101E01A182C098A003483F7 /* Images.xcassets */; };
 		2101E022182C098A003483F7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2101E021182C098A003483F7 /* XCTest.framework */; };
 		2101E023182C098A003483F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2101E002182C0989003483F7 /* Foundation.framework */; };
@@ -25,6 +25,26 @@
 		2101E03E182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */; };
 		2101E042182C61B8003483F7 /* CLLocation+Bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E041182C61B8003483F7 /* CLLocation+Bearing.m */; };
 		2101E043182C61B8003483F7 /* CLLocation+Bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E041182C61B8003483F7 /* CLLocation+Bearing.m */; };
+		2101E045182C9444003483F7 /* Green_Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E044182C9444003483F7 /* Green_Arrow.png */; };
+		2101E046182C9444003483F7 /* Green_Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E044182C9444003483F7 /* Green_Arrow.png */; };
+		2101E04B182D6EB1003483F7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E048182D6EB1003483F7 /* stop.png */; };
+		2101E04C182D6EB1003483F7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E048182D6EB1003483F7 /* stop.png */; };
+		2101E051182D7110003483F7 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04D182D7110003483F7 /* left_arrow.png */; };
+		2101E052182D7110003483F7 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04D182D7110003483F7 /* left_arrow.png */; };
+		2101E053182D7110003483F7 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04E182D7110003483F7 /* down_arrow.png */; };
+		2101E054182D7110003483F7 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04E182D7110003483F7 /* down_arrow.png */; };
+		2101E055182D7110003483F7 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04F182D7110003483F7 /* right_arrow.png */; };
+		2101E056182D7110003483F7 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E04F182D7110003483F7 /* right_arrow.png */; };
+		2101E057182D7110003483F7 /* up_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E050182D7110003483F7 /* up_arrow.png */; };
+		2101E058182D7110003483F7 /* up_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E050182D7110003483F7 /* up_arrow.png */; };
+		2101E05B182D72CC003483F7 /* RemoteControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E05A182D72CC003483F7 /* RemoteControlViewController.m */; };
+		2101E05C182D72CC003483F7 /* RemoteControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E05A182D72CC003483F7 /* RemoteControlViewController.m */; };
+		2101E05E182D7F6E003483F7 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E05D182D7F6E003483F7 /* earth.png */; };
+		2101E05F182D7F6E003483F7 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E05D182D7F6E003483F7 /* earth.png */; };
+		2101E061182D824E003483F7 /* steeringWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E060182D824E003483F7 /* steeringWheel.png */; };
+		2101E062182D824E003483F7 /* steeringWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E060182D824E003483F7 /* steeringWheel.png */; };
+		2101E065182D83FD003483F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E064182D83FD003483F7 /* UIView+Toast.m */; };
+		2101E066182D83FD003483F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E064182D83FD003483F7 /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +69,8 @@
 		2101E011182C0989003483F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2101E012182C0989003483F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2101E015182C098A003483F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2101E017182C098A003483F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2101E018182C098A003483F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2101E017182C098A003483F7 /* GPSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSViewController.h; sourceTree = "<group>"; };
+		2101E018182C098A003483F7 /* GPSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSViewController.m; sourceTree = "<group>"; };
 		2101E01A182C098A003483F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2101E020182C098A003483F7 /* GPSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2101E021182C098A003483F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +81,18 @@
 		2101E03C182C1BFA003483F7 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		2101E040182C61B8003483F7 /* CLLocation+Bearing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Bearing.h"; sourceTree = "<group>"; };
 		2101E041182C61B8003483F7 /* CLLocation+Bearing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Bearing.m"; sourceTree = "<group>"; };
+		2101E044182C9444003483F7 /* Green_Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green_Arrow.png; sourceTree = "<group>"; };
+		2101E048182D6EB1003483F7 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		2101E04D182D7110003483F7 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		2101E04E182D7110003483F7 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_arrow.png; sourceTree = "<group>"; };
+		2101E04F182D7110003483F7 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		2101E050182D7110003483F7 /* up_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up_arrow.png; sourceTree = "<group>"; };
+		2101E059182D72CC003483F7 /* RemoteControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteControlViewController.h; sourceTree = "<group>"; };
+		2101E05A182D72CC003483F7 /* RemoteControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteControlViewController.m; sourceTree = "<group>"; };
+		2101E05D182D7F6E003483F7 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
+		2101E060182D824E003483F7 /* steeringWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steeringWheel.png; sourceTree = "<group>"; };
+		2101E063182D83FD003483F7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		2101E064182D83FD003483F7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +156,15 @@
 				2101E012182C0989003483F7 /* AppDelegate.m */,
 				2101E040182C61B8003483F7 /* CLLocation+Bearing.h */,
 				2101E041182C61B8003483F7 /* CLLocation+Bearing.m */,
-				2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */,
 				2101E03C182C1BFA003483F7 /* GCDAsyncUdpSocket.h */,
+				2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */,
 				2101E014182C098A003483F7 /* Main.storyboard */,
-				2101E017182C098A003483F7 /* ViewController.h */,
-				2101E018182C098A003483F7 /* ViewController.m */,
+				2101E017182C098A003483F7 /* GPSViewController.h */,
+				2101E018182C098A003483F7 /* GPSViewController.m */,
+				2101E059182D72CC003483F7 /* RemoteControlViewController.h */,
+				2101E05A182D72CC003483F7 /* RemoteControlViewController.m */,
+				2101E063182D83FD003483F7 /* UIView+Toast.h */,
+				2101E064182D83FD003483F7 /* UIView+Toast.m */,
 				2101E01A182C098A003483F7 /* Images.xcassets */,
 				2101E009182C0989003483F7 /* Supporting Files */,
 			);
@@ -141,6 +177,14 @@
 				2101E00A182C0989003483F7 /* GPSApp-Info.plist */,
 				2101E00B182C0989003483F7 /* InfoPlist.strings */,
 				2101E00E182C0989003483F7 /* main.m */,
+				2101E05D182D7F6E003483F7 /* earth.png */,
+				2101E060182D824E003483F7 /* steeringWheel.png */,
+				2101E044182C9444003483F7 /* Green_Arrow.png */,
+				2101E04D182D7110003483F7 /* left_arrow.png */,
+				2101E04E182D7110003483F7 /* down_arrow.png */,
+				2101E04F182D7110003483F7 /* right_arrow.png */,
+				2101E050182D7110003483F7 /* up_arrow.png */,
+				2101E048182D6EB1003483F7 /* stop.png */,
 				2101E010182C0989003483F7 /* GPSApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -241,8 +285,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2101E01B182C098A003483F7 /* Images.xcassets in Resources */,
+				2101E045182C9444003483F7 /* Green_Arrow.png in Resources */,
+				2101E057182D7110003483F7 /* up_arrow.png in Resources */,
+				2101E055182D7110003483F7 /* right_arrow.png in Resources */,
+				2101E051182D7110003483F7 /* left_arrow.png in Resources */,
+				2101E053182D7110003483F7 /* down_arrow.png in Resources */,
+				2101E05E182D7F6E003483F7 /* earth.png in Resources */,
+				2101E061182D824E003483F7 /* steeringWheel.png in Resources */,
 				2101E00D182C0989003483F7 /* InfoPlist.strings in Resources */,
 				2101E016182C098A003483F7 /* Main.storyboard in Resources */,
+				2101E04B182D6EB1003483F7 /* stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +302,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2101E05F182D7F6E003483F7 /* earth.png in Resources */,
 				2101E02C182C098A003483F7 /* InfoPlist.strings in Resources */,
+				2101E04C182D6EB1003483F7 /* stop.png in Resources */,
+				2101E052182D7110003483F7 /* left_arrow.png in Resources */,
+				2101E046182C9444003483F7 /* Green_Arrow.png in Resources */,
+				2101E056182D7110003483F7 /* right_arrow.png in Resources */,
+				2101E058182D7110003483F7 /* up_arrow.png in Resources */,
+				2101E062182D824E003483F7 /* steeringWheel.png in Resources */,
+				2101E054182D7110003483F7 /* down_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +323,9 @@
 			files = (
 				2101E03D182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
 				2101E042182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
-				2101E019182C098A003483F7 /* ViewController.m in Sources */,
+				2101E05B182D72CC003483F7 /* RemoteControlViewController.m in Sources */,
+				2101E019182C098A003483F7 /* GPSViewController.m in Sources */,
+				2101E065182D83FD003483F7 /* UIView+Toast.m in Sources */,
 				2101E013182C0989003483F7 /* AppDelegate.m in Sources */,
 				2101E00F182C0989003483F7 /* main.m in Sources */,
 			);
@@ -273,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2101E05C182D72CC003483F7 /* RemoteControlViewController.m in Sources */,
 				2101E03E182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
 				2101E02E182C098A003483F7 /* GPSAppTests.m in Sources */,
+				2101E066182D83FD003483F7 /* UIView+Toast.m in Sources */,
 				2101E043182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

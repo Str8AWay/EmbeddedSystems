@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Embedded Systems. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GPSViewController.h"
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 
 #define GPS_FORMAT @"(%f, %f)"
 
-@interface ViewController ()
+@interface GPSViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GPSViewController
 
 - (void)viewDidLoad
 {
@@ -39,6 +39,7 @@
     self.headingLabel.text = [NSString stringWithFormat:@"%f", delegate.heading.trueHeading];
     self.gpsLabel.text = [NSString stringWithFormat:GPS_FORMAT, delegate.location.coordinate.latitude, delegate.location.coordinate.longitude];
     self.correctionLabel.text = [NSString stringWithFormat:@"%f",delegate.correction];
+    self.arrayImageView.transform = CGAffineTransformMakeRotation((delegate.correction - 180) / 180 * M_PI);
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +64,7 @@
 {
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.correctionLabel.text = [NSString stringWithFormat:@"%f", delegate.correction];
+    self.arrayImageView.transform = CGAffineTransformMakeRotation((delegate.correction - 180) / 180 * M_PI);
 }
 
 @end

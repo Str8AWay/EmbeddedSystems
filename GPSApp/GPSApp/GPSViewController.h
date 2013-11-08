@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface GPSViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *gpsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *correctionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *arrayImageView;
 
 @end
