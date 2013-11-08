@@ -19,6 +19,17 @@
         android:onClick="homeRobot"
         android:text="Home" />
 
+   <ToggleButton 
+	   android:id="@+id/tiltbutton"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:textOn="Tilt on"
+	   android:textOff="Tilt off"
+       android:layout_marginLeft="113dp"
+       android:layout_marginTop="35dp"
+       android:layout_x="106dp"
+       android:layout_y="106dp"/>
+    
     <Button
         android:id="@+id/waypointButton"
         android:layout_width="wrap_content"
