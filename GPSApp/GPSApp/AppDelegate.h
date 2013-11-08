@@ -18,6 +18,7 @@
 @property (strong, nonatomic) CLHeading *heading;
 @property (strong, nonatomic) GCDAsyncUdpSocket *socket;
 @property (strong, nonatomic) CLLocation *destination;
+@property double correction;
 @property BOOL sendPackets;
 
 @end

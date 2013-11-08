@@ -87,7 +87,7 @@
         if (self.sendPackets) {
             [self sendingCorrectionPacket];
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"headingChanged" object:self.heading];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"headingChanged" object:nil];
     }
 }
 
@@ -101,7 +101,7 @@
         if (self.sendPackets) {
             [self sendingCorrectionPacket];
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"locationChanged" object:self.heading];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"locationChanged" object:nil];
     }
 }
 
@@ -131,7 +131,13 @@
     } else {
         double bearingTo = [self.location bearingToLocation:self.destination];
         double convertedHeading = self.heading.trueHeading;
-        NSLog(@"%f\n", bearingTo);
+        convertedHeading = convertedHeading > 180 ? -(360 - convertedHeading) : convertedHeading;
+        self.correction = (bearingTo - convertedHeading) * -1;
+        self.correction = self.correction > 180 ? -(360 - self.correction) : self.correction;
+        self.correction = self.correction < -180 ? (360 + self.correction) : self.correction;
+        NSData *data = [[NSString stringWithFormat:BEARING_FORMAT, (int)self.correction] dataUsingEncoding:NSUTF8StringEncoding];
+        [self.socket sendData:data toHost:VEX_IP port:VEX_PORT withTimeout:-1 tag:1];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"correctionChanged" object:nil];
     }
 }
 

@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *gpsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *correctionLabel;
 
 @end

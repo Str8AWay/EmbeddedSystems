@@ -30,10 +30,15 @@
                                              selector:@selector(handleLocationChange:)
                                                  name:@"locationChanged"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleCorrectionChange:)
+                                                 name:@"correctionChanged"
+                                               object:nil];
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.headingLabel.text = [NSString stringWithFormat:@"%f", delegate.heading.trueHeading];
     self.gpsLabel.text = [NSString stringWithFormat:GPS_FORMAT, delegate.location.coordinate.latitude, delegate.location.coordinate.longitude];
+    self.correctionLabel.text = [NSString stringWithFormat:@"%f",delegate.correction];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +57,12 @@
 {
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.gpsLabel.text = [NSString stringWithFormat:GPS_FORMAT, delegate.location.coordinate.latitude, delegate.location.coordinate.longitude];
+}
+
+- (void)handleCorrectionChange:(id)object
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    self.correctionLabel.text = [NSString stringWithFormat:@"%f", delegate.correction];
 }
 
 @end
