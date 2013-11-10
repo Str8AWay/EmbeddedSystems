@@ -45,6 +45,12 @@
 		2101E062182D824E003483F7 /* steeringWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E060182D824E003483F7 /* steeringWheel.png */; };
 		2101E065182D83FD003483F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E064182D83FD003483F7 /* UIView+Toast.m */; };
 		2101E066182D83FD003483F7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E064182D83FD003483F7 /* UIView+Toast.m */; };
+		2101E06A182D9AE9003483F7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2101E069182D9AE9003483F7 /* MapKit.framework */; };
+		2101E06C182D9AF2003483F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2101E06B182D9AF2003483F7 /* CoreLocation.framework */; };
+		2101E06F182ECCD9003483F7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E06E182ECCD9003483F7 /* MapViewController.m */; };
+		2101E070182ECCD9003483F7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2101E06E182ECCD9003483F7 /* MapViewController.m */; };
+		2101E072182ED27D003483F7 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E071182ED27D003483F7 /* pin.png */; };
+		2101E073182ED27D003483F7 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2101E071182ED27D003483F7 /* pin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,11 @@
 		2101E060182D824E003483F7 /* steeringWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steeringWheel.png; sourceTree = "<group>"; };
 		2101E063182D83FD003483F7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		2101E064182D83FD003483F7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		2101E069182D9AE9003483F7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2101E06B182D9AF2003483F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2101E06D182ECCD9003483F7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2101E06E182ECCD9003483F7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		2101E071182ED27D003483F7 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2101E06C182D9AF2003483F7 /* CoreLocation.framework in Frameworks */,
+				2101E06A182D9AE9003483F7 /* MapKit.framework in Frameworks */,
 				2101E005182C0989003483F7 /* CoreGraphics.framework in Frameworks */,
 				2101E007182C0989003483F7 /* UIKit.framework in Frameworks */,
 				2101E003182C0989003483F7 /* Foundation.framework in Frameworks */,
@@ -141,6 +154,8 @@
 		2101E001182C0989003483F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2101E06B182D9AF2003483F7 /* CoreLocation.framework */,
+				2101E069182D9AE9003483F7 /* MapKit.framework */,
 				2101E002182C0989003483F7 /* Foundation.framework */,
 				2101E004182C0989003483F7 /* CoreGraphics.framework */,
 				2101E006182C0989003483F7 /* UIKit.framework */,
@@ -154,18 +169,10 @@
 			children = (
 				2101E011182C0989003483F7 /* AppDelegate.h */,
 				2101E012182C0989003483F7 /* AppDelegate.m */,
-				2101E040182C61B8003483F7 /* CLLocation+Bearing.h */,
-				2101E041182C61B8003483F7 /* CLLocation+Bearing.m */,
 				2101E03C182C1BFA003483F7 /* GCDAsyncUdpSocket.h */,
 				2101E03B182C1BFA003483F7 /* GCDAsyncUdpSocket.m */,
-				2101E014182C098A003483F7 /* Main.storyboard */,
-				2101E017182C098A003483F7 /* GPSViewController.h */,
-				2101E018182C098A003483F7 /* GPSViewController.m */,
-				2101E059182D72CC003483F7 /* RemoteControlViewController.h */,
-				2101E05A182D72CC003483F7 /* RemoteControlViewController.m */,
-				2101E063182D83FD003483F7 /* UIView+Toast.h */,
-				2101E064182D83FD003483F7 /* UIView+Toast.m */,
-				2101E01A182C098A003483F7 /* Images.xcassets */,
+				218B7796182FD6AA0068250F /* Categories */,
+				218B7797182FD6D20068250F /* ViewControllers */,
 				2101E009182C0989003483F7 /* Supporting Files */,
 			);
 			path = GPSApp;
@@ -174,17 +181,12 @@
 		2101E009182C0989003483F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2101E014182C098A003483F7 /* Main.storyboard */,
+				2101E01A182C098A003483F7 /* Images.xcassets */,
+				218B7795182FD6860068250F /* App Images */,
 				2101E00A182C0989003483F7 /* GPSApp-Info.plist */,
 				2101E00B182C0989003483F7 /* InfoPlist.strings */,
 				2101E00E182C0989003483F7 /* main.m */,
-				2101E05D182D7F6E003483F7 /* earth.png */,
-				2101E060182D824E003483F7 /* steeringWheel.png */,
-				2101E044182C9444003483F7 /* Green_Arrow.png */,
-				2101E04D182D7110003483F7 /* left_arrow.png */,
-				2101E04E182D7110003483F7 /* down_arrow.png */,
-				2101E04F182D7110003483F7 /* right_arrow.png */,
-				2101E050182D7110003483F7 /* up_arrow.png */,
-				2101E048182D6EB1003483F7 /* stop.png */,
 				2101E010182C0989003483F7 /* GPSApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -206,6 +208,46 @@
 				2101E02A182C098A003483F7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		218B7795182FD6860068250F /* App Images */ = {
+			isa = PBXGroup;
+			children = (
+				2101E05D182D7F6E003483F7 /* earth.png */,
+				2101E060182D824E003483F7 /* steeringWheel.png */,
+				2101E071182ED27D003483F7 /* pin.png */,
+				2101E044182C9444003483F7 /* Green_Arrow.png */,
+				2101E04D182D7110003483F7 /* left_arrow.png */,
+				2101E04E182D7110003483F7 /* down_arrow.png */,
+				2101E04F182D7110003483F7 /* right_arrow.png */,
+				2101E050182D7110003483F7 /* up_arrow.png */,
+				2101E048182D6EB1003483F7 /* stop.png */,
+			);
+			name = "App Images";
+			sourceTree = "<group>";
+		};
+		218B7796182FD6AA0068250F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2101E040182C61B8003483F7 /* CLLocation+Bearing.h */,
+				2101E041182C61B8003483F7 /* CLLocation+Bearing.m */,
+				2101E063182D83FD003483F7 /* UIView+Toast.h */,
+				2101E064182D83FD003483F7 /* UIView+Toast.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		218B7797182FD6D20068250F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2101E017182C098A003483F7 /* GPSViewController.h */,
+				2101E018182C098A003483F7 /* GPSViewController.m */,
+				2101E059182D72CC003483F7 /* RemoteControlViewController.h */,
+				2101E05A182D72CC003483F7 /* RemoteControlViewController.m */,
+				2101E06D182ECCD9003483F7 /* MapViewController.h */,
+				2101E06E182ECCD9003483F7 /* MapViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +335,7 @@
 				2101E05E182D7F6E003483F7 /* earth.png in Resources */,
 				2101E061182D824E003483F7 /* steeringWheel.png in Resources */,
 				2101E00D182C0989003483F7 /* InfoPlist.strings in Resources */,
+				2101E072182ED27D003483F7 /* pin.png in Resources */,
 				2101E016182C098A003483F7 /* Main.storyboard in Resources */,
 				2101E04B182D6EB1003483F7 /* stop.png in Resources */,
 			);
@@ -305,6 +348,7 @@
 				2101E05F182D7F6E003483F7 /* earth.png in Resources */,
 				2101E02C182C098A003483F7 /* InfoPlist.strings in Resources */,
 				2101E04C182D6EB1003483F7 /* stop.png in Resources */,
+				2101E073182ED27D003483F7 /* pin.png in Resources */,
 				2101E052182D7110003483F7 /* left_arrow.png in Resources */,
 				2101E046182C9444003483F7 /* Green_Arrow.png in Resources */,
 				2101E056182D7110003483F7 /* right_arrow.png in Resources */,
@@ -324,6 +368,7 @@
 				2101E03D182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
 				2101E042182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
 				2101E05B182D72CC003483F7 /* RemoteControlViewController.m in Sources */,
+				2101E06F182ECCD9003483F7 /* MapViewController.m in Sources */,
 				2101E019182C098A003483F7 /* GPSViewController.m in Sources */,
 				2101E065182D83FD003483F7 /* UIView+Toast.m in Sources */,
 				2101E013182C0989003483F7 /* AppDelegate.m in Sources */,
@@ -338,6 +383,7 @@
 				2101E05C182D72CC003483F7 /* RemoteControlViewController.m in Sources */,
 				2101E03E182C1BFA003483F7 /* GCDAsyncUdpSocket.m in Sources */,
 				2101E02E182C098A003483F7 /* GPSAppTests.m in Sources */,
+				2101E070182ECCD9003483F7 /* MapViewController.m in Sources */,
 				2101E066182D83FD003483F7 /* UIView+Toast.m in Sources */,
 				2101E043182C61B8003483F7 /* CLLocation+Bearing.m in Sources */,
 			);
@@ -540,6 +586,7 @@
 				2101E033182C098A003483F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2101E034182C098A003483F7 /* Build configuration list for PBXNativeTarget "GPSAppTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +595,7 @@
 				2101E036182C098A003483F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -120,6 +120,7 @@
             CLLocation *destination = [[CLLocation alloc] initWithLatitude:lat.doubleValue longitude:lon.doubleValue];
             self.destination = destination;
             self.sendPackets = YES;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"destinationChanged" object:nil];
         }
     }
 }
