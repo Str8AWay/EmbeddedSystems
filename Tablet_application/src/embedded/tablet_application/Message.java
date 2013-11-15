@@ -6,6 +6,7 @@ import java.net.InetAddress;
 
 import android.app.Application;
 import android.location.Location;
+import android.util.Log;
 
 public class Message extends Application{
 
@@ -19,11 +20,13 @@ public class Message extends Application{
 		byte[] message = messageStr.getBytes();
 		int msg_length=messageStr.length();
 		DatagramPacket packet = new DatagramPacket(message, msg_length,local,port);
+		Log.i("Direction", messageStr);
 		try{
 			outSocket.send(packet);
 		}
 		catch(Exception e){
 			System.out.println(e.toString());
+			Log.e("Socket failure", e.toString());
 		}
 	}
 	
@@ -31,6 +34,7 @@ public class Message extends Application{
 		double lat = myLoc.getLatitude();
 		double lon = myLoc.getLongitude();
 		String message = lat + "," + lon;
+		Log.i("Location", message);
 		sendMessage(message);
 	}
 }

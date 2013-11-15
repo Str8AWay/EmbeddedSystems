@@ -12,7 +12,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -21,8 +20,17 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class ControlActivity extends Activity {
-	
+
+    final float[] mValuesMagnet      = new float[3];
+    final float[] mValuesAccel       = new float[3];
+    final float[] mValuesOrientation = new float[3];
+    final float[] mRotationMatrix    = new float[9];
+    
+    volatile int prevDir = 0;
+    volatile boolean tiltControl = false;
+    
 	ToggleButton toggle;
+	MyLocation myLoc;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +40,22 @@ public class ControlActivity extends Activity {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 		
-		Bundle extras = getIntent().getExtras();
-		String[] connectionInfo = extras.getStringArray("connection");
-		Message.ip = connectionInfo[0];
+		//Bundle extras = getIntent().getExtras();
+		//String[] connectionInfo = extras.getStringArray("connection");		
+		Message.ip = "192.168.2.11";
 		
 		toggle = (ToggleButton) findViewById(R.id.tiltbutton);
 		
 		setupUDP();
 		setupSensor();
 		setupTilt();
+		setupLocation();
 	}
 	
+	public void setupLocation(){
+		LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+		myLoc = new MyLocation(locationManager);
+	}
 	
 	public void setupTilt(){
 		Thread tilt = new Thread(){
@@ -55,11 +68,6 @@ public class ControlActivity extends Activity {
 		};
 		tilt.start();
 	}
-
-    final float[] mValuesMagnet      = new float[3];
-    final float[] mValuesAccel       = new float[3];
-    final float[] mValuesOrientation = new float[3];
-    final float[] mRotationMatrix    = new float[9];
 	
 	public void setupSensor(){
 		SensorManager sensor = (SensorManager) this.getSystemService(SENSOR_SERVICE);
@@ -99,7 +107,7 @@ public class ControlActivity extends Activity {
 		});
 	}
 
-	volatile boolean tiltControl = false;
+	
 	
 	public void setupUDP(){
 		try{
@@ -111,14 +119,11 @@ public class ControlActivity extends Activity {
 		}
 	}
 	
-	volatile int prevDir = 0;
+	
 	
 	public void tiltRobot(){
 			SensorManager.getRotationMatrix(mRotationMatrix, null, mValuesAccel, mValuesMagnet);
 	        SensorManager.getOrientation(mRotationMatrix, mValuesOrientation);
-	        final CharSequence test;
-	        test = "results: " + mValuesOrientation[0] +" "+mValuesOrientation[1]+ " "+ mValuesOrientation[2];
-	        //System.out.println(test);
 	        if (mValuesOrientation[2] > -1) {
 	        	if (prevDir != 1){
 	        		prevDir = 1;
@@ -172,11 +177,11 @@ public class ControlActivity extends Activity {
 		Message.sendMessage("BACKWARDS");
 	}
 	public void homeRobot(View view){
-		LocationManager location = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-		Location myLoc = location.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		if (myLoc != null) myLoc = location.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		if (myLoc != null) Message.sendLocation(myLoc);
-		else Message.sendMessage("tablet location unknown");
+		Location location = myLoc.getLocation();
+		Toast toast;
+		if (location != null) toast = Toast.makeText(this, location.getLatitude() + ", " + location.getLongitude(), Toast.LENGTH_SHORT); //Message.sendLocation(location);
+		else toast = Toast.makeText(this, "location not found", Toast.LENGTH_SHORT); //Message.sendMessage("tablet location unknown");
+		toast.show();
 	}
 	
 	public void waypointRobot(View view){
