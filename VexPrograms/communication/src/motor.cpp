@@ -24,7 +24,7 @@ void driveForward(unsigned char speed_setting)
         default:
             speed = 0;
     }
-    setMotor(leftMotorPort, -speed + OFFSET);
+    setMotor(leftMotorPort, -(speed - 11) + OFFSET);
     setMotor(rightMotorPort, speed + OFFSET);
 }
 
