@@ -182,6 +182,7 @@ public class ControlActivity extends Activity {
 		if (location != null) toast = Toast.makeText(this, location.getLatitude() + ", " + location.getLongitude(), Toast.LENGTH_SHORT); //Message.sendLocation(location);
 		else toast = Toast.makeText(this, "location not found", Toast.LENGTH_SHORT); //Message.sendMessage("tablet location unknown");
 		toast.show();
+		if (location != null) Message.sendLocation(location);
 	}
 	
 	public void waypointRobot(View view){
